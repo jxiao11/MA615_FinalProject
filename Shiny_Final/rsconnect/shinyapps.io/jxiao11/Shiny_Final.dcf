@@ -1,0 +1,12 @@
+name: Shiny_Final
+title: Shiny_Final
+username:
+account: jxiao11
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 333262
+bundleId: 1346352
+url: https://jxiao11.shinyapps.io/Shiny_Final/
+when: 1525047070.03615
+asMultiple: FALSE
+asStatic: FALSE
