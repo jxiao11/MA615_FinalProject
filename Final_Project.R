@@ -152,6 +152,7 @@ bing_word_counts_trump %>%
 
 #### Resize windown.#####
 #### otherwise, next positve negative wordcloud plot wont fit ####
+#### A screen will shows up, all you need to do is close it. Then your following plot will fit into page
 #### you may or may not need to call this function ####
 resize.win <- function(Width=6, Height=6)
   
@@ -191,14 +192,15 @@ tidy_books_obama1 <- tidy_books_obama %>%
   count(word,sort = TRUE)
 
 tidy_books_trump1 <- tidy_books_trump %>%
+  filter(word !="president")%>%
   anti_join(stop_words)%>%
   count(word,sort = TRUE)
-
+resize.win(6,6)
 wordcloud(words = tidy_books_obama1$word, freq = tidy_books_obama1$n,scale = c(4,0.1), min.freq = 1,
           max.words=100, random.order=FALSE, rot.per=0.1, 
           colors=brewer.pal(8, "Dark2"))
 
-
+resize.win(6,6)
 wordcloud(words = tidy_books_trump1$word, freq = tidy_books_trump1$n,scale = c(4,0.1), min.freq = 1,
           max.words=100, random.order=FALSE, rot.per=0.1, 
           colors=brewer.pal(8, "Dark2"))

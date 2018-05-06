@@ -1,7 +1,7 @@
 ---
 title: "MA615 Final Project"
 author: "Junpei Xiao"
-date: "2018Äê4ÔÂ24ÈÕ"
+date: "2018/04/24"
 output: ioslides_presentation
 ---
 
@@ -241,6 +241,7 @@ p1<-wordcloud(words = tidy_books_obama1$word, freq = tidy_books_obama1$n,scale =
 ```{r warning=FALSE,message = FALSE,fig.height=4,fig.width=6}
 tidy_books_trump1 <- tidy_books_trump %>%
   anti_join(stop_words)%>%
+  filter(word !="president")%>%
   count(word,sort = TRUE)
 
 p2<-wordcloud(words = tidy_books_trump1$word, freq = tidy_books_trump1$n,scale = c(4,0.1), min.freq = 1,
